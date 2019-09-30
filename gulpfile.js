@@ -27,7 +27,6 @@ function js() {
             .pipe(rename({
                 suffix:".min"
             }))
-            .pipe(postcss([autoprefixer({grid:true}), cssnano()]))
             .pipe(sourcemaps.write("."))
             .pipe(gulp.dest("js"))
     );
