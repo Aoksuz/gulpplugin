@@ -22,10 +22,13 @@ function styles() {
 function js() {
     return(
         gulp.src(["js/*.js", "!js/*min.js"])
+            .pipe(sourcemaps.init())
             .pipe(terser())
             .pipe(rename({
                 suffix:".min"
             }))
+            .pipe(postcss([autoprefixer({grid:true}), cssnano()]))
+            .pipe(sourcemaps.write("."))
             .pipe(gulp.dest("js"))
     );
 }
