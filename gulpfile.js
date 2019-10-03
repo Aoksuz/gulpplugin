@@ -33,7 +33,7 @@ function js() {
 }
 
 function watch(){
-    gulp.watch("css/*.scss", styles); *
+    gulp.watch("css/*.scss", styles);
     gulp.watch(["js/*.js", "!js/*min.js"], js);
 }
 
